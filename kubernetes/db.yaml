@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db
+  labels:
+     app: db
+spec:
+  containers:
+  - name: db
+    image: mysql
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: webserver-root-pass
+       # create first user and table
+      - name: MYSQL_USER
+        value: webserver-user
+      - name: MYSQL_PASSWORD
+        value: webserver-pass
+      - name: MYSQL_DATABASE
+        value: webserverdb
+    ports:
+    - containerPort: 3306
+    volumeMounts:
+    - name: host-db-storage
+      mountPath: /var/lib/mysql
+  volumes:
+    - name: host-db-storage
+      hostPath:
+        path: /dbdata
