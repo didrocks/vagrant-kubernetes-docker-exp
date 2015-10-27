@@ -1,0 +1,5 @@
+.vagrant/
+
+app/bin/
+app/pkg/
+app/src/github*
