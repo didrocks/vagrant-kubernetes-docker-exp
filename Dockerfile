@@ -4,4 +4,4 @@ FROM opensuse:latest
 ADD app/bin/server /app/server
 
 ENTRYPOINT /app/server
-EXPOSE 8000
+EXPOSE 80
