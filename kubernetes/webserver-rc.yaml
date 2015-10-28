@@ -20,13 +20,6 @@ spec:
           value: webserver-pass
         - name: MYSQL_DATABASE
           value: webserverdb
-        volumeMounts:
-        - name: testmount
-          mountPath: /vagrant
-      volumes:
-        - name: testmount
-          hostPath:
-            path: /vagrant
     metadata:
       labels:
         app: webserver
